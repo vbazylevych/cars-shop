@@ -8,6 +8,15 @@ public class Car {
     private int price;
     private String contactDetails;
 
+    public Car() {
+    }
+
+    public Car(int price, String contactDetails, String engine) {
+        this.price=price;
+        this.contactDetails=contactDetails;
+        this.engine=engine;
+    }
+
     public String getEngine() {
         return engine;
     }

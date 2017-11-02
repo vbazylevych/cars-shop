@@ -2,28 +2,34 @@ package com.playtika.qa.carsshop.domain;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class Car {
-    private String engine;
+    private Map<String , String> param;
     private int price;
     private String contactDetails;
+
+
+    public Map<String, String> getParam() {
+        return param;
+    }
+
+    public void setParam(Map<String, String> param) {
+        this.param = param;
+    }
 
     public Car() {
     }
 
-    public Car(int price, String contactDetails, String engine) {
+    public Car(int price, String contactDetails, Map param) {
         this.price=price;
         this.contactDetails=contactDetails;
-        this.engine=engine;
+        this.param = param;
+
     }
 
-    public String getEngine() {
-        return engine;
-    }
 
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
 
     public int getPrice() {
         return price;

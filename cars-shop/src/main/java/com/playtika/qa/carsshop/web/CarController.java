@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 public class CarController {
 
@@ -24,10 +26,10 @@ public class CarController {
     @PostMapping(value = "/addcar")
     public ResponseEntity createCustomer(@RequestParam("price") int price,
                                          @RequestParam("contact") String contactDetails,
-                                         @RequestBody String engine) throws JSONException {
-        JSONObject json = new JSONObject(engine);
-       String engineValue = json.get("engine").toString();
-        Car newCar = new Car(price, contactDetails, engineValue);
+                                         @RequestBody Map<String, String> json) throws JSONException {
+      // JSONObject json = new JSONObject(engineodel);
+
+        Car newCar = new Car(price, contactDetails, json);
 
         return new ResponseEntity(newCar, HttpStatus.OK);
     }

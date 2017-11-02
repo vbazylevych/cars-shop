@@ -27,9 +27,7 @@ public class CarController {
     public ResponseEntity createCustomer(@RequestParam("price") int price,
                                          @RequestParam("contact") String contactDetails,
                                          @RequestBody Map<String, String> json) throws JSONException {
-      // JSONObject json = new JSONObject(engineodel);
-
-        Car newCar = new Car(price, contactDetails, json);
+              Car newCar = new Car(price, contactDetails, json);
 
         return new ResponseEntity(newCar, HttpStatus.OK);
     }
